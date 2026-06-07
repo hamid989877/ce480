@@ -1,0 +1,10 @@
+Item,Value,Unit
+Mean ship length,50.0,m
+Maximum/design ship length,80.0,m
+Mean draft,4.0,m
+Maximum/design draft,5.5,m
+Mean beam,9.0,m
+Maximum/design beam,14.0,m
+Quay wall length,150.0,m
+Turning basin diameter,160.0,m
+One-way channel width,70.0,m

@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}Executive Summary}{2}{section.1}%
+\contentsline {section}{\numberline {2}Problem Statement and Methodology}{2}{section.2}%
+\contentsline {section}{\numberline {3}Input Data and Assumptions}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Site and wave inputs}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Design vessel and quay assumptions}{3}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Turning Basin, Channel Width, and Quay Length}{3}{section.4}%
+\contentsline {section}{\numberline {5}Navigation Depth Calculation}{4}{section.5}%
+\contentsline {section}{\numberline {6}Bathymetry, Required Depth, and Breakwater Reach}{5}{section.6}%
+\contentsline {section}{\numberline {7}Breakwater Layout}{5}{section.7}%
+\contentsline {section}{\numberline {8}Deep-Water Design Waves from HW4}{6}{section.8}%
+\contentsline {section}{\numberline {9}Goda Design Wave Height at the Breakwater}{8}{section.9}%
+\contentsline {section}{\numberline {10}Final Design Summary}{10}{section.10}%
+\contentsline {section}{\numberline {11}Conclusions}{10}{section.11}%
+\contentsline {section}{\numberline {12}Limitations}{11}{section.12}%
+\contentsline {section}{\numberline {13}References and Data Sources}{11}{section.13}%

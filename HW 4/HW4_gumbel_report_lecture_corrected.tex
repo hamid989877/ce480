@@ -1,0 +1,281 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{setspace}
+
+\setstretch{1.15}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\title{\textbf{CE480 -- HW4 Report}\\[4pt]
+Extreme Wave Analysis Using the Gumbel Distribution}
+\author{Group 3\\
+Hamidreza Khalaj Zahraei\\
+Ali \"Ozuysal}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This report presents an extreme wave analysis using the annual maximum significant wave heights obtained from HW3. The annual maxima from 2005 to 2025 were ranked in descending order. The non-exceedance probabilities were calculated with the Gumbel plotting position, and the Gumbel reduced variate was calculated as \(y=-\ln[-\ln(P)]\). Following the Gumbel formulation used in the lecture, the significant wave height was fitted as a linear function of the reduced variate, \(H_s=ay+b\). The fitted equation was then used to calculate 10-year, 50-year, and 100-year return-period wave heights.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+Extreme wave analysis is used to estimate rare wave conditions that may occur once in a long period of time. In coastal and harbor engineering, these return-period wave heights are important for the design of breakwaters, quay walls, harbor entrances, and other coastal structures.
+
+In this homework, the annual maximum significant wave heights obtained from HW3 were used. The Gumbel distribution was applied to estimate the significant wave heights corresponding to return periods of:
+
+\[
+T_r = 10,\ 50,\ 100\ \text{years}
+\]
+
+\section{Input Data}
+
+The input data are the annual maximum significant wave heights, \(H_s\), calculated in HW3 using the JONSWAP method. The data cover the period from 2005 to 2025, so the number of annual maximum values is:
+
+\[
+N = 21
+\]
+
+\section{Methodology}
+
+\subsection{Ordered Annual Maxima}
+
+The annual maximum wave heights were sorted in descending order. The largest wave height receives rank \(m=1\), and the smallest wave height receives rank \(m=N\).
+
+\subsection{Plotting Position}
+
+The plotting position used for the Gumbel distribution is:
+
+\begin{equation}
+P = 1 - \frac{m-0.44}{N+0.12}
+\end{equation}
+
+where \(P\) is the probability of non-exceedance, \(m\) is the rank, and \(N\) is the number of annual maxima.
+
+The probability of exceedance is:
+
+\begin{equation}
+Q = 1-P
+\end{equation}
+
+\subsection{Gumbel Reduced Variate}
+
+The Gumbel reduced variate is:
+
+\begin{equation}
+y = -\ln[-\ln(P)]
+\end{equation}
+
+\subsection{Gumbel Linear Form}
+
+The Gumbel distribution can be written as:
+
+\begin{equation}
+P = \exp\left[-\exp\left(-\frac{H_s-b}{a}\right)\right]
+\end{equation}
+
+Taking the reduced variate form gives:
+
+\begin{equation}
+-\ln[-\ln(P)] = \frac{H_s-b}{a}
+\end{equation}
+
+Therefore:
+
+\begin{equation}
+H_s = ay + b
+\end{equation}
+
+where:
+
+\begin{itemize}
+    \item \(y=-\ln[-\ln(P)]\) is the Gumbel reduced variate,
+    \item \(a\) is the slope,
+    \item \(b\) is the intercept.
+\end{itemize}
+
+The fitted equation from the 2005--2025 annual maxima is:
+
+\begin{equation}
+H_s = 1.48487821y + 2.24757794
+\end{equation}
+
+with:
+
+\begin{equation}
+R^2 = 0.96940269
+\end{equation}
+
+\section{Return Period Calculation}
+
+For an annual maximum series, one value is used per year, so the mean rate is:
+
+\[
+\lambda = 1\ \text{event/year}
+\]
+
+The exceedance probability for return period \(T_r\) is:
+
+\begin{equation}
+Q = \frac{1}{T_r}
+\end{equation}
+
+Therefore:
+
+\begin{equation}
+P = 1-\frac{1}{T_r}
+\end{equation}
+
+The reduced variate for the return period is:
+
+\begin{equation}
+y_{T_r} = -\ln[-\ln(P)]
+\end{equation}
+
+The return-period significant wave height is then:
+
+\begin{equation}
+H_{s,T_r} = ay_{T_r} + b
+\end{equation}
+
+\section{Results}
+
+\subsection{Ordered Annual Maximum Data}
+
+\begin{center}
+\small
+\begin{longtable}{ccccc}
+\caption{Ordered annual maximum significant wave heights and Gumbel reduced variates.}\\
+\toprule
+\textbf{Rank} & \textbf{Year} & \(\mathbf{H_s}\) \textbf{(m)} & \(\mathbf{P}\) & \(\mathbf{y=-\ln[-\ln(P)]}\) \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{Rank} & \textbf{Year} & \(\mathbf{H_s}\) \textbf{(m)} & \(\mathbf{P}\) & \(\mathbf{y=-\ln[-\ln(P)]}\) \\
+\midrule
+\endhead
+
+1 & 2018 & 7.075 & 0.9735 & 3.6166 \\
+2 & 2024 & 6.236 & 0.9261 & 2.5674 \\
+3 & 2025 & 5.780 & 0.8788 & 2.0463 \\
+4 & 2014 & 5.060 & 0.8314 & 1.6896 \\
+5 & 2007 & 4.184 & 0.7841 & 1.4137 \\
+6 & 2011 & 3.703 & 0.7367 & 1.1858 \\
+7 & 2008 & 3.368 & 0.6894 & 0.9890 \\
+8 & 2010 & 3.366 & 0.6420 & 0.8140 \\
+9 & 2013 & 3.303 & 0.5947 & 0.6545 \\
+10 & 2016 & 3.226 & 0.5473 & 0.5064 \\
+11 & 2020 & 3.139 & 0.5000 & 0.3665 \\
+12 & 2017 & 3.111 & 0.4527 & 0.2324 \\
+13 & 2005 & 2.923 & 0.4053 & 0.1019 \\
+14 & 2015 & 2.280 & 0.3580 & -0.0270 \\
+15 & 2009 & 1.866 & 0.3106 & -0.1563 \\
+16 & 2021 & 1.551 & 0.2633 & -0.2886 \\
+17 & 2012 & 1.215 & 0.2159 & -0.4272 \\
+18 & 2019 & 1.193 & 0.1686 & -0.5769 \\
+19 & 2006 & 0.835 & 0.1212 & -0.7468 \\
+20 & 2023 & 0.669 & 0.0739 & -0.9576 \\
+21 & 2022 & 0.512 & 0.0265 & -1.2892 \\
+
+\bottomrule
+\end{longtable}
+\end{center}
+
+\subsection{Gumbel Plot}
+
+Figure~\ref{fig:gumbel} shows the Gumbel plot. The horizontal axis is the reduced variate, and the vertical axis is significant wave height. This follows the lecture form \(H_s=ay+b\).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{gumbel_Hs_vs_reduced_variate_lecture_corrected.png}
+    \caption{Gumbel plot of significant wave height \(H_s\) versus reduced variate \(y=-\ln[-\ln(P)]\).}
+    \label{fig:gumbel}
+\end{figure}
+
+\subsection{Return-Period Wave Heights}
+
+\begin{table}[H]
+\centering
+\caption{Return-period significant wave heights from the fitted Gumbel line.}
+\begin{tabular}{cccc}
+\toprule
+\textbf{Return Period, \(T_r\) (years)} & \(\mathbf{P}\) & \(\mathbf{y_{T_r}}\) & \(\mathbf{H_{s,T_r}}\) \textbf{(m)} \\
+\midrule
+10 & 0.9000 & 2.2504 & 5.589 \\
+50 & 0.9800 & 3.9019 & 8.041 \\
+100 & 0.9900 & 4.6001 & 9.078 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The design wave heights are:
+
+\[
+H_{s,10} = 5.59\ \text{m}
+\]
+
+\[
+H_{s,50} = 8.04\ \text{m}
+\]
+
+\[
+H_{s,100} = 9.08\ \text{m}
+\]
+
+\section{Discussion}
+
+The fitted Gumbel line has a high coefficient of determination, \(R^2=0.9694\), which indicates that the annual maximum wave heights follow the Gumbel trend well. As expected, the wave height increases with return period:
+
+\[
+H_{s,100} > H_{s,50} > H_{s,10}
+\]
+
+This is physically reasonable because a longer return period corresponds to a rarer and more severe wave event.
+
+\section{Conclusion}
+
+The Gumbel extreme wave analysis was performed using 21 annual maximum significant wave heights from 2005 to 2025. The annual maxima were ordered, probabilities were calculated using the Gumbel plotting position, and the reduced variate was calculated using \(y=-\ln[-\ln(P)]\). The fitted Gumbel equation was:
+
+\[
+H_s = 1.48487821y + 2.24757794
+\]
+
+The calculated return-period wave heights are:
+
+\[
+H_{s,10}=5.59\ \text{m}, \qquad
+H_{s,50}=8.04\ \text{m}, \qquad
+H_{s,100}=9.08\ \text{m}
+\]
+
+These values were calculated directly from the fitted equation, not manually read from the graph.
+
+\section*{Files Needed for Compilation}
+
+To compile this report, place these files in the same folder:
+
+\begin{itemize}
+    \item \texttt{HW4\_gumbel\_report\_lecture\_corrected.tex}
+    \item \texttt{gumbel\_Hs\_vs\_reduced\_variate\_lecture\_corrected.png}
+\end{itemize}
+
+\end{document}
